@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .ts,.tsx",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npm run build && rm -rf docs && mkdir docs && cp -r dist/* docs/ && git add docs && git commit -m 'deploy: update docs' && git push origin main"
   },
   "dependencies": {
     "react": "^18.3.1",
