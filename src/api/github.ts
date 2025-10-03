@@ -19,7 +19,7 @@ export type GithubRepo = {
 };
 
 const BASE = "https://api.github.com";
-const TOKEN = "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";
+const TOKEN = import.meta.env.VITE_GITHUB_TOKEN as string | undefined;
 
 function authHeaders() {
   const headers: Record<string, string> = {
